@@ -1,0 +1,9 @@
+---
+- name: Get users on server
+  hosts: all
+  remote_user: sam
+
+  tasks:
+    - name: Get list of users
+      getent:
+        database: passwd
