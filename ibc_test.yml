@@ -12,6 +12,10 @@
     - name: Save content as JSON data as a fact
       set_fact:
         facts_out: "{{ facts_out_text.stdout | to_json | from_json }}"
+    
+    - name: Filter using jinja
+      set_fact:
+        nodes_list: "{{ facts_out.nodes | selectattr('address', 'search', '^10.*') | map (attribute='address') | list }}"
 
 #    - name: Print output
 #      debug:
@@ -22,7 +26,3 @@
 #        nodes_list: "{{ facts_out.nodes | json_query(jsonquery) }}"
 #      vars:
 #        jsonquery: "[?contains(name,'node')].{IP: address, Name: name}"
-
-    - name: Filter using jinja
-      set_fact:
-        nodes_list: "{{ facts_out.nodes | selectattr('address', 'search', '^10.*') | map (attribute='address') | list }}"
