@@ -6,8 +6,8 @@
 
   tasks:
     - name: Get contents of json file
-      command: "cat {{ json_file }}"
-      register: facts_out
+      command: "cat {{ json_file }} | jq ."
+      register: facts_out | to_json
 
     - name: Print output
       debug:
