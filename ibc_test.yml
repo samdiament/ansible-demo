@@ -23,6 +23,6 @@
 #      vars:
 #        jsonquery: "[?contains(name,'node')].{IP: address, Name: name}"
 
-      - name: Filter using jinja
-        set_fact:
-          nodes_list: "{{ facts_out.nodes | selectattr('address', 'search', '^10.*') | map (attribute='address') | list }}"
+    - name: Filter using jinja
+      set_fact:
+        nodes_list: "{{ facts_out.nodes | selectattr('address', 'search', '^10.*') | map (attribute='address') | list }}"
