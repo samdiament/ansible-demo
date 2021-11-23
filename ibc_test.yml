@@ -1,0 +1,10 @@
+---
+- name: Testing JSON parsing for IBC
+  hosts: all
+  vars:
+    facts_out: "{{ lookup('file', '/var/lib/awx/projects/ibc/ibc.json') | from_json }}"
+
+  tasks:
+    - name: Print output
+      debug:
+        var: facts_out

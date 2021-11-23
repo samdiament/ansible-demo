@@ -6,3 +6,5 @@
     - name: Get list of users
       getent:
         database: passwd
+        register: getent_passwd
+        
