@@ -1,6 +1,6 @@
 ---
 - name: Testing JSON parsing for IBC
-  hosts: all
+  hosts: rh-sandbox
   vars:
     facts_out: "{{ lookup('file', '/var/lib/awx/projects/ibc/ibc.json') | from_json }}"
 
