@@ -7,7 +7,11 @@
   tasks:
     - name: Get contents of json file
       command: "cat {{ json_file }} | jq ."
-      register: facts_out | to_json
+      register: facts_out_text
+
+    - name: Save content as JSON data as a fact
+      set_fact:
+        facts_out: "{{ facts_out_text.stdout | from_json }}"
 
     - name: Print output
       debug:
