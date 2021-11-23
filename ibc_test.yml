@@ -2,7 +2,7 @@
 - name: Testing JSON parsing for IBC
   hosts: rh-sandbox
   vars:
-    json_file: "/var/lib/awx/projects/ibc/ibc.json'
+    json_file: "/var/lib/awx/projects/ibc/ibc.json"
 
   tasks:
     - name: Get contents of json file
