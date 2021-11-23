@@ -15,7 +15,7 @@
     
     - name: Filter using jinja
       set_fact:
-        nodes_list: "{{ facts_out.nodes | selectattr('address', 'search', '^10.*') | map (attribute='address') | list }}"
+        nodes_list: "{{ facts_out.nodes | selectattr('address', 'search', '^10.*') | list }}"
 
 #    - name: Print output
 #      debug:
