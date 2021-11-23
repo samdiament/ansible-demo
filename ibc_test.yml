@@ -13,6 +13,12 @@
       set_fact:
         facts_out: "{{ facts_out_text.stdout | from_json }}"
 
-    - name: Print output
-      debug:
-        var: facts_out
+#    - name: Print output
+#      debug:
+#        var: facts_out
+
+    - name: Filter results
+      set_fact:
+        nodes_list: "{{ facts_out.nodes | json_query(jsonquery) }}"
+      vars:
+        jsonquery: "[*].{IP: address, Name: name}"
