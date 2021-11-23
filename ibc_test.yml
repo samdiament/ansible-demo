@@ -11,7 +11,7 @@
 
     - name: Save content as JSON data as a fact
       set_fact:
-        facts_out: "{{ facts_out_text.stdout | from_json }}"
+        facts_out: "{{ facts_out_text.stdout | to_json | from_json }}"
 
 #    - name: Print output
 #      debug:
