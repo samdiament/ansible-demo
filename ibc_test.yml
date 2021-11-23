@@ -21,4 +21,4 @@
       set_fact:
         nodes_list: "{{ facts_out.nodes | json_query(jsonquery) }}"
       vars:
-        jsonquery: "[*].{IP: address, Name: name}"
+        jsonquery: "[?address=='10.131.0.20'].{IP: address, Name: name}"
