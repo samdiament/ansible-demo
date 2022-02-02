@@ -1,5 +1,5 @@
 ---
-- name: Testing JSON parsing for IBC
+- name: Testing JSON parsing
   hosts: rh-sandbox
   vars:
     json_file: "/var/lib/awx/projects/ibc/ibc.json"
