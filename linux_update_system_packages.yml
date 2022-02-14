@@ -1,0 +1,10 @@
+---
+- name: Update Linux System Packages with Yum
+  hosts: all
+
+  tasks:
+    - name: Update all linux packages
+      yum:
+        name: '*'
+        state: latest
+  
