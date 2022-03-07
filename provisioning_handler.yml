@@ -1,0 +1,14 @@
+---
+- name: Provisioning Handler
+  hosts: all
+
+tasks:
+  - name: Hello Linux world
+    ansible.builtin.debug:
+      msg: We are provisioning a Linux server
+    when: arch_platform == 'Linux'
+  
+  - name: Hellow Windows world
+    ansible.builtin.debut:
+      msg: We are provisioning a Windows server
+    when: arch_platform == 'Windows'
