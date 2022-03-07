@@ -1,6 +1,7 @@
 ---
 - name: Provisioning Handler
-  hosts: all
+  hosts: localhost
+  connection: local
 
 tasks:
   - name: Hello Linux world
