@@ -10,6 +10,6 @@
       when: arch_platform == 'Linux'
     
     - name: Hellow Windows world
-      ansible.builtin.debut:
+      ansible.builtin.debug:
         msg: We are provisioning a Windows server
       when: arch_platform == 'Windows'
