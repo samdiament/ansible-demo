@@ -8,8 +8,18 @@
       ansible.builtin.debug:
         msg: We are provisioning a Linux server
       when: arch_platform == 'Linux'
+
+    - name: Updating Linux packages
+      ansible.builtin.debug:
+        msg: Updating Linux packages
+      when: arch_platform == 'Linux'
     
     - name: Hellow Windows world
       ansible.builtin.debug:
         msg: We are provisioning a Windows server
+      when: arch_platform == 'Windows'
+
+    - name: Updating Windows packages
+      ansible.builtin.debug:
+        msg: Updating Windows packages
       when: arch_platform == 'Windows'
