@@ -1,0 +1,13 @@
+---
+- name: Post-Provisioning Handler
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Confirm networking
+      ansible.builtin.debug:
+        msg: Pinging server
+      
+    - name: Reboot server
+      ansible.builtin.debug:
+        msg: Rebooting server
