@@ -6,5 +6,8 @@
     - name: Get list of users
       getent:
         database: passwd
-        register: getent_passwd
-        
+      register: getent_passwd
+    
+    - name: Print user list
+      debug:
+        msg: "{{ getent_passwd }}"
