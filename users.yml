@@ -11,3 +11,7 @@
     - name: Print user list
       debug:
         msg: "{{ getent_passwd }}"
+
+    - name: Print user list again
+      debug:
+        msg: "{{ getent_passwd }}"
