@@ -1,0 +1,12 @@
+---
+- name: Linux Postprovisioning Configuration
+  hosts: all
+  
+  roles: 
+    - redhat.insights.insights_client
+  
+  tasks:
+    - name: Configure Insights and OpenSCAP
+      import_role:         
+        name: redhat.insights.compliance
+        tasks_from: install
